@@ -1,0 +1,63 @@
+Métodos de ordenación
+
+Entre más complejo sea el algoritmo  mayor serpa el volúimen del código, pero será con el propósito de que decresca el número de iteraciones o pasadas requeridas para llegar a la oridenación deseada. 
+
+	Directos: 
+		burbuja --> Hará n-1 pasadas, pero en cada pasada comparará todos los elemntos 
+		selección --> Tendrá un número fijo de cmoparaciones 
+		inserción -->
+
+		Son métodos de orden cuadrático: N al cuadrado(el tiempo de ejecución crece de forma cuadrática)
+
+	Indirectos: shell, ordenación rápida, por mezcla, radixsort
+
+En el caso del shell, se busca reducir el número de intercambios de datos, ya que es el proceso de intercambio el que requiere más t      oñpaskdopaskpodasdporabajo a la computadora, debido a la necsidad de desplazmineto de datos en memoria. 
+
+Escala de eficiencia (1 == +eficaz  3 == -eficaz)
+1.-	Inserción  --> Shell 3.-
+2.-	Selección  --> Heap 2.-
+3.-	Burbuja	--> Quick 1.-
+
+	El quick es el método más eficiente
+	La inserción es un buen metodo de ordenamiento, porque podemos trabajar con una cantidad de datos limitados
+	pero al hacer corrimientos haces movimientos 
+
+
+Shell --> Autor: Donald L. Shell  
+
+También podemos llamarla ordenación por inserción con incrementos decrecientes
+
+Es un método de orden fraccionario de N a la 1.25
+		El x de la sublista nos indicará la cantidad de espacioes en el arreglo en la que tomaremos un nuevo dato para obtener nuestra sublista 
+       		
+		sublistas de tamaño/orden? X, entonces ordenamos los elementos que estén dentro de dichas sublistas
+		Los cambios se hacen en el mismo arreglo
+		Se aplica el método de inserción varias veces
+		En resúmen, ordena sublistas
+		Cómo se determina el tamaño de los intervalos? Shell sugirió hacer numeros primos el valor de los intervalos, para que las sublistas puedan tener elementos diferentes, osea que no comparemos elementos repetidos
+
+		Fórmula para calcular el numero del intervalo : 
+		*Pasada 0
+			Num de elementos/3
+		*Demás pasadas
+			Num de elementos/(3+1)
+
+
+Preguntas sobre el algoritmo Shell --> ¿Cómo sabemos cuando se tiene la lista completamente ordenada?? O es que es necesario hacer todas las sublistas necesarias hasta terminar las comparaciones??
+
+Método HEAPSORT--> Método basado en selección
+
+Desventajas de torneo --> No puewde memorizar las comparaciones que ya ha hecho, algo parecido a la selección
+
+el Heapsort memorizará las comparaciones
+
+Nodo de un árbol: padre P hijo izq =(P*2)+1; der =(P*2)+2 (Hablando de índices de los nodos)
+
+	1.- Construir el heap
+	2.- Obtener los n-2 mayores
+
+	Por cada triada (Padre y dos hijos(izq y der)) el dato mayor debe ser menor o igual que el padre
+	Ordenar la triada más lejana a la raíz primero
+
+El algoritmo empieza en la última triada del árbol simulado, para comparar desde abajo el elemnto más grande, poder ir acomodando y que esté "balanceado", y el ciclo irá decreciendo para comparar las triadas que están más arribas.
+

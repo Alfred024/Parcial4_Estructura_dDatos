@@ -1,0 +1,39 @@
+	Ordenación y Búsqueda
+
+	Existen alrededor de 35 métodos de ordenamiento y búsqueda, solo que tienen variaciones
+
+Á partir de una lógica se llega a resultados prácticos
+
+No es lo mismo ordednar que clasificar, clasificamos para ordenar, 
+y terminamos ordenando???
+
+Una biblioteca no ordena los libros, sino que los clasifica (son más específicas)
+Pero se puede ordenar en autores 
+
+	Ordenar(Puede ser ascendente o descendente): Colocar elemento en su posición final con respecto a los demás
+		Utilizan características de los datos a ordenar
+		¿En qué te basas para ordenar? Generalmente suelen ser enteros o Strings
+
+	Decidimos cuál será el criterio de ordén
+
+	-Método de intercambios (Burbuja)--->Tomar un elemento pequeño/grande y subirlo, como en un vaso de refresco con burbujitas de gas  (Pasada: Revisión de todos los elementos para lograr x objetivo)
+	-
+	Ejemplos: 
+
+
+Shaker sort/Cocktail/Vibración --->	SORT (5% - 8% de ahorro de tiempo respecto a el Burbuja)
+	Meter una burbuija en sentido contrario, intercalando entre ordenación de mayores y menores, o viceversa, dependiendo del acomodo deseado, 
+	Consume mucha memoria debido a los arrgleos que se requieren para almacenar a los ganadores
+
+Método torneo---> Gasta más memoria y tiempo, por lo que es peor este método que el burbuja
+
+Método de selección ---> La cazuela más chiquita hasta abajo, y encima van las más grandes que esta  Tiene la ventaja que hace menos intercambios por pasada (Uno por pasada)
+
+	Se hace una búsqueda del más grande/pequeño 
+
+	3er método Base
+	Los anteriores son ciegos, meintras que el de inserción insertará de acuerdo a un criterio, en espec´fico, el criterio de acuerdo a los datos que ya existen en el array, po rlo que sólo revisará los necesarios 
+		Método de inserción -->
+
+
+	
