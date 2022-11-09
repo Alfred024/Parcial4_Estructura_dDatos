@@ -1,11 +1,10 @@
 
-package métodos_ddistribución;
+package demoradix;
 
-public class Métodos_dDistribución {
+public class DemoRadix {
 
-    Cola[] punteros = new Cola[10];
-    
     public static void main(String[] args) {
+        
         int array[] = {893,34,41,545,2,65,3,89,100,25,22,19,54,9,21,34,7,90};
         Cola cubetas[] = new Cola[10];
         
@@ -16,7 +15,9 @@ public class Métodos_dDistribución {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]+" ");
         }
+        
     }
+    
 }
 
 class Radix{
@@ -112,7 +113,7 @@ class Radix{
 class Nodo{
     int value;
     Nodo next;
-    
+
     public Nodo(int value) {
         this.value = value;
         this.next = null;
@@ -127,10 +128,10 @@ class Cola{
         this.start = null;
         this.end = null;
     }
+
     
     public void add(int value){
         Nodo nuevoNodo = new Nodo(value);
-        
         if(start == null){
             start = end = nuevoNodo;
         }else{
@@ -149,4 +150,3 @@ class Cola{
         }
     }
 }
-
