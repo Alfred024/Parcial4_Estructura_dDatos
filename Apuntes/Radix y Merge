@@ -1,0 +1,17 @@
+ Método de distribución
+
+ Busca ubicar a un elemento dentro de un grupo específico para ubicarlo más facilmente
+
+ El quicksort es un método de sistribución más que de ordenación
+
+
+ De aquí es donde radixSort surge. Es necesario una lista de adyacencia
+
+ NO es un método de ordenación interna, es miye eficiente pero es necesario el suo voráz de memoria para aplicarlo.
+
+ En la decada de los 60´s la memoria Ram era muy limitada, por lo que se usaban archivos para almacenar/ejecutar??? un programa, a partir de este problemma surge los algoritmos de mezcla, clasificados en mezcla directa y mezcla natural 
+
+ La mezcla consiste en que cuando se tienen dos grupos, se tratará de unirlos mezclando el orden en el que van. Teniendo un índice en cada de los grupos, se compara cada dato del ´´indice, y se acomoda en un nuevo lugar 
+
+ Dicho proceso se hacía directamente con archivos. 
+ Cada grupo que se comparará será de uno, y se comparará con el siguiente grupo, y a partir de ahí se irá haciendo la mezcla de los datos 

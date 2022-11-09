@@ -1,0 +1,14 @@
+<----HeapSort---->
+
+	Representa un árbol binario mediante el empleo de un array. Para calcular los hijos de un nodo vamos a multiplicar el valor del index del nodo*2 (hijo izquierdo) y el valor del index del nodo*2 +1 (hijo derecho).
+
+	Se tomarán las mejores careacterísticas de los métodos de ordenamiento de inserción y de combinación/merge.
+
+	Eliminaremos la raíz del árbol de manera repetida 
+
+	El proceso requiere de recursividad, y podríamos imaginarlo como una cloa de prioridades
+
+
+//Acerca del Shell
+	No hacemos comparaciones de sublistas entre 2 porque eso inplicaría comparar entre elementos que ya hemos comparado, en cambio, al imprimir entre 3, ya que nos da resultado de números primos, las sublistas de eleementos comparados no se verán tan repetidas. 
+	
