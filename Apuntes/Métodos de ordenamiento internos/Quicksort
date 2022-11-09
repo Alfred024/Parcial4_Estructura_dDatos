@@ -1,0 +1,17 @@
+Quicksort
+
+El más eficiente y veloz de ordenación interna y se basa en el método burbuja para ordenar sus datos.
+
+Debemos tomar un pivote para clasificar los datos respecto a dicho elemento, el cual se calculará como la mediana, 
+(LS - LI)/2, el pivote tendrá elementos a su izuierda(menores que pivote) y a su derecha,  
+
+Podrá decirse que es un método de distribución debido a la clasificación de sus elementos
+
+
+Cuando el dato del puntero LI es mayor qe el pivote y el dato LI es menor que el pivote (cruce de índices), se intercambian
+Si se cumple que LI es menor que pivote o LS mayor que pivote se recorrerá o decrementarán los punteros
+
+Pregunta: 
+En el libro mencionan que respecto al pivote, crearemos dos sublistas, las cuales ocntendrán valores menors y mayores al pivote, dichas sublistas se guardarán en otro array? 
+
+
