@@ -7,7 +7,7 @@ public class Métodos_dDistribución {
     
     public static void main(String[] args) {
         int array[] = {893,34,41,545,2,65,3,89,100,25,22,19,54,9,21,34,7,90};
-        Cola cubetas[] = new Cola[10];
+        /*Cola cubetas[] = new Cola[10];
         
         Radix x = new Radix(cubetas);
         x.radix(array);
@@ -15,7 +15,10 @@ public class Métodos_dDistribución {
         System.out.println("Array ordenado");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]+" ");
-        }
+        }*/
+        
+        Mezcla_Directa y = new Mezcla_Directa(array);
+        y.merge();
     }
 }
 
@@ -36,7 +39,6 @@ class Radix{
         
         
         while(bandera >= 0){
-            //Primero mete todos los datos a las cubetas
             for (int i = 0; i < datos.length; i++) {
                 unidadIndex = ((datos[i]+"").length()-1)-j;
                 

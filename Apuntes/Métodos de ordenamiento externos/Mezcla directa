@@ -1,0 +1,7 @@
+Merge/Mezcal directa
+
+Consiste en trabajar dos archivos en los que iremos distribuyéndo los datos, no pidemos asegurar que alguno de los datos de alguno de los 2 archivos esté ordenado, y si lo están, solo sería casualidad, por lo que la distribución de los datos en cada archivo se hará de manera proporcional (Tomo uno y lo meto al archivo A, el siguiente al archivo B y así consecutivamente). 
+
+Las particiones que se realizan ocasionarán un aumento de n*2 en las listas ya ordenadas. 
+
+Hablando en términos de un arreglo,, si quisiesemos aplicar este método, sería necesario tener dos arreglos auxiliares que fueran de la mitad de la longitud del arreglo original. 

@@ -5,39 +5,14 @@ public class DemoRadix {
 
     public static void main(String[] args) {
         
-        int array[] = {893,34,41,545,2,65,3,89,100,25,22,19,54,9,21,34,7,90};
-        Cola cubetas[] = new Cola[10];
-        
-        Radix x = new Radix(cubetas);
-        x.radix(array);
-        
-        System.out.println("Array ordenado");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i]+" ");
-        }
-        
-    }
-    
-}
-
-class Radix{
-    Cola cubetas[];
-    
-    Radix(Cola punteros[]){
-        cubetas = punteros;
-    }
-    
-    void radix(int datos[]){
-        System.out.println("Inicio método Radix");
-        //Cola cubetas[] = new Cola[10];
+        int datos[] = {893,34,41,545,2,65,3,89,100,25,22,19,54,9,21,34,7,90};
         int bandera = mayorRadix(datos); 
         int unidadIndex;
         char unidad;
         int j=0;
-        
+        Cola cubetas[] = new Cola[10];
         
         while(bandera >= 0){
-            //Primero mete todos los datos a las cubetas
             for (int i = 0; i < datos.length; i++) {
                 unidadIndex = ((datos[i]+"").length()-1)-j;
                 
@@ -58,9 +33,27 @@ class Radix{
             j++;
             bandera--;
         }
+        
+        System.out.println("Array ordenado");
+        for (int i = 0; i < datos.length; i++) {
+            System.out.print(datos[i]+" ");
+        }
+        
+        
     }
     
-    void elegirCubeta(int dato,char unidad, Cola cubetas[]){
+    static int mayorRadix(int datos[]){
+        int mayor = 0;
+        int index = 0;
+        while(index < datos.length-1){
+            if(datos[index] > mayor){
+                mayor = datos[index];
+            }index++;
+        }
+        return (mayor+"").length()-1;
+    }
+    
+    static void elegirCubeta(int dato,char unidad, Cola cubetas[]){
         switch (unidad) {
             case '0':
                 cubetas[0].add(dato);
@@ -96,19 +89,8 @@ class Radix{
                 break;
         }
     }
-    
-    int mayorRadix(int datos[]){
-        int mayor = 0;
-        int index = 0;
-        while(index < datos.length-1){
-            if(datos[index] > mayor){
-                mayor = datos[index];
-            }index++;
-        }
-        return (mayor+"").length()-1;
-    }
-    
 }
+
 
 class Nodo{
     int value;

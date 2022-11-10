@@ -63,25 +63,6 @@ public class ordenamientos_Avanzados{
         return datos;
     }
 
-    public static int[] insercion(int datos[]){
-        int empiezo = 0;
-        int aux;
-        while(empiezo < datos.length-1){
-            if(datos[empiezo]>datos[empiezo+1]){
-                aux = datos[empiezo+1];
-                int index = empiezo+1;
-                while(index != 0 && datos[index-1] > aux){
-                    datos[index] = datos[index-1];
-                    index--;
-                }
-                datos[index] = aux; 
-            }
-            empiezo++;
-        }
-
-        return datos;
-    }
-
     public int[] shellCopiado(int array[]){
         int numero=array.length,i,j,k,salto,aux;
         
