@@ -1,44 +1,18 @@
 
 package métodos_ddistribución;
 
-public class Métodos_dDistribución {
-
-    Cola[] punteros = new Cola[10];
-    
-    public static void main(String[] args) {
-        int array[] = {893,34,41,545,2,65,3,89,100,25,22,19,54,9,21,34,7,90};
-        /*Cola cubetas[] = new Cola[10];
-        
-        Radix x = new Radix(cubetas);
-        x.radix(array);
-        
-        System.out.println("Array ordenado");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i]+" ");
-        }*/
-        
-        Mezcla_Directa y = new Mezcla_Directa(array);
-        y.merge();
-    }
-}
-
-class Radix{
-    Cola cubetas[];
-    
-    Radix(Cola punteros[]){
-        cubetas = punteros;
-    }
+public class Radix{
+    Cola[] cubetas = new Cola[10];
     
     void radix(int datos[]){
-        System.out.println("Inicio método Radix");
-        //Cola cubetas[] = new Cola[10];
+        crearCubetas(cubetas);
+        
         int bandera = mayorRadix(datos); 
         int unidadIndex;
         char unidad;
         int j=0;
         
-        
-        while(bandera >= 0){
+        while(bandera >= -1){
             for (int i = 0; i < datos.length; i++) {
                 unidadIndex = ((datos[i]+"").length()-1)-j;
                 
@@ -58,6 +32,14 @@ class Radix{
             }
             j++;
             bandera--;
+        }
+    }
+    
+    void crearCubetas(Cola[] cubetas){
+        Cola newCubeta;
+        for (int i = 0; i < cubetas.length; i++) {
+            newCubeta = new Cola();
+            cubetas[i] = newCubeta;
         }
     }
     
@@ -110,45 +92,3 @@ class Radix{
     }
     
 }
-
-class Nodo{
-    int value;
-    Nodo next;
-    
-    public Nodo(int value) {
-        this.value = value;
-        this.next = null;
-    }
-}
-
-class Cola{
-    Nodo start;
-    Nodo end;
-
-    public Cola() {
-        this.start = null;
-        this.end = null;
-    }
-    
-    public void add(int value){
-        Nodo nuevoNodo = new Nodo(value);
-        
-        if(start == null){
-            start = end = nuevoNodo;
-        }else{
-            end.next = nuevoNodo;
-            end = nuevoNodo;
-        }
-    }
-    
-    public int delete(){
-        if(start == null){
-            return -1;
-        }else{
-            Nodo temp = start;
-            start = start.next;
-            return temp.value;
-        }
-    }
-}
-

@@ -5,3 +5,7 @@ Consiste en trabajar dos archivos en los que iremos distribuyéndo los datos, no
 Las particiones que se realizan ocasionarán un aumento de n*2 en las listas ya ordenadas. 
 
 Hablando en términos de un arreglo,, si quisiesemos aplicar este método, sería necesario tener dos arreglos auxiliares que fueran de la mitad de la longitud del arreglo original. 
+
+¿Cuál es la eficiencia? 
+Puede ser que sea que el número de comparaciones se ve reducido debido a las separaciones de grupos
+

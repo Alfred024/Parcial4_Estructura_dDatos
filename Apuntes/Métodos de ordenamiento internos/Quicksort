@@ -1,5 +1,7 @@
 Quicksort
 
+También podrías ser llamado como un algoritmo de distribución???
+
 El más eficiente y veloz de ordenación interna y se basa en el método burbuja para ordenar sus datos.
 
 Debemos tomar un pivote para clasificar los datos respecto a dicho elemento, el cual se calculará como la mediana, 
