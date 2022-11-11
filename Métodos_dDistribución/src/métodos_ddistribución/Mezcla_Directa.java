@@ -9,13 +9,18 @@ public class Mezcla_Directa {
 
     Mezcla_Directa(int datos[]){
         this.datos = datos;
-        archivo1 = new int[(datos.length/2)+1]; //---> Para el caso que el número de elementos a ordenar sea un núero impar
+        archivo1 = new int[(datos.length/2)]; //---> Para el caso que el número de elementos a ordenar sea un núero impar
         archivo2 = new int[(datos.length/2)];
     }
     
     //No contempla el caso de los conjuntos impares
     void merge(){
+        int vuelta = 0;
         while(particion < (datos.length)){
+            System.out.println("Vuelta #"+(++vuelta));
+            for (int i = 0; i < datos.length; i++) {
+                System.out.print(datos[i]+" ");
+            }System.out.println("");
             distribuirDatos(archivo1, archivo2, particion);
             comparativaArchivos(archivo1, archivo2, particion);
             particion = particion*2;
@@ -28,34 +33,38 @@ public class Mezcla_Directa {
     //Otra forma de tratar el problema anterior podría ser reasignándole el tamaño al arreglo 2, y que quedara con una casilla menos
     void comparativaArchivos(int archivo1[], int archivo2[], int p_tamañoGrupo){
         int i,j; //---> i para el archivo 1  y j para el archivo 2
-        int vueltas=0;
-        int tamañoGrupo = p_tamañoGrupo;
-        int otroWey=0;
+        int indexDatos=0;
+        int tamañoGrupo = p_tamañoGrupo; //--> Podemos cambiar el nombre de la varibale por: "lim_Grupo_Actual"
+        int vueltaGrupo=0;
 
-        while(vueltas < datos.length){
-            i = j = tamañoGrupo*otroWey;
+        while(indexDatos < datos.length){
+            i = j = p_tamañoGrupo*vueltaGrupo;
             
-            while(i < tamañoGrupo && j < tamañoGrupo){
-                if(i >= tamañoGrupo || j >= tamañoGrupo){
+            while(i < tamañoGrupo || j < tamañoGrupo){
+                //tamañoGrupo == 2
+                if((i >= tamañoGrupo && j < tamañoGrupo) || (j >= tamañoGrupo && i < tamañoGrupo)){
                     if(i>j){
                         while(j != i){
-                            datos[vueltas++] = archivo2[j++];
+                            datos[indexDatos++] = archivo2[j++];
                         }
                     }else{
                         while(i != j){
-                            datos[vueltas++] = archivo1[i++];
+                            datos[indexDatos++] = archivo1[i++];
                         }
                     }
+                }   
+                
+                if(i != tamañoGrupo && j != tamañoGrupo){
+                    if(archivo1[i] <= archivo2[j]){
+                        datos[indexDatos++] = archivo1[i++];
+                    }else{
+                        datos[indexDatos++] = archivo2[j++];
+                    }
                 }
-                    
-                if(archivo1[i] < archivo2[j]){
-                    datos[vueltas++] = archivo1[i++];
-                }else{
-                    datos[vueltas++] = archivo2[j++];
-                }
+                
             }
-            tamañoGrupo*=2;
-            otroWey++;
+            tamañoGrupo*=tamañoGrupo*2;
+            vueltaGrupo++;
         }
     }
 
@@ -77,3 +86,18 @@ public class Mezcla_Directa {
         }
     }
 }
+
+
+/*
+if((i >= tamañoGrupo && j < tamañoGrupo) || (j >= tamañoGrupo && i < tamañoGrupo)){
+                    if(i>j){
+                        while(j != i){
+                            datos[indexDatos++] = archivo2[j++];
+                        }
+                    }else{
+                        while(i != j){
+                            datos[indexDatos++] = archivo1[i++];
+                        }
+                    }
+                }
+*/
