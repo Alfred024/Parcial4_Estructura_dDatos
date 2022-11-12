@@ -14,6 +14,7 @@ public class Exe {
         Mezcla_Directa y = new Mezcla_Directa(array);
         y.merge();
         
+        System.out.println("Array ordenado");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]+" ");
         }
@@ -26,6 +27,7 @@ public class Exe {
             System.out.print(array[i]+" ");
         }*/
     }
+
     
     
 }

@@ -15,59 +15,47 @@ public class Mezcla_Directa {
     
     //No contempla el caso de los conjuntos impares
     void merge(){
-        int vuelta = 0;
+        int vuelta = 1;
         while(particion < (datos.length)){
-            System.out.println("Vuelta #"+(++vuelta));
+            System.out.println("\n\n");
+            System.out.println("Vuelta #"+(vuelta++));
             for (int i = 0; i < datos.length; i++) {
                 System.out.print(datos[i]+" ");
             }System.out.println("");
+            
             distribuirDatos(archivo1, archivo2, particion);
-            comparativaArchivos(archivo1, archivo2, particion);
+            comparativaArchivos2(archivo1, archivo2, particion);
             particion = particion*2;
         }
     }
-
-    //Es necesario tener en cuenta que cuando el array es impar, tendremos un espacio del array que no tendrá nada (o es igual a 0),
-    //por lo que tomaremos a el 0 como una casilla vacía
     
-    //Otra forma de tratar el problema anterior podría ser reasignándole el tamaño al arreglo 2, y que quedara con una casilla menos
-    void comparativaArchivos(int archivo1[], int archivo2[], int p_tamañoGrupo){
-        int i,j; //---> i para el archivo 1  y j para el archivo 2
-        int indexDatos=0;
-        int tamañoGrupo = p_tamañoGrupo; //--> Podemos cambiar el nombre de la varibale por: "lim_Grupo_Actual"
-        int vueltaGrupo=0;
-
-        while(indexDatos < datos.length){
-            i = j = p_tamañoGrupo*vueltaGrupo;
-            
-            while(i < tamañoGrupo || j < tamañoGrupo){
-                //tamañoGrupo == 2
-                if((i >= tamañoGrupo && j < tamañoGrupo) || (j >= tamañoGrupo && i < tamañoGrupo)){
-                    if(i>j){
-                        while(j != i){
-                            datos[indexDatos++] = archivo2[j++];
-                        }
-                    }else{
-                        while(i != j){
-                            datos[indexDatos++] = archivo1[i++];
-                        }
-                    }
-                }   
-                
-                if(i != tamañoGrupo && j != tamañoGrupo){
-                    if(archivo1[i] <= archivo2[j]){
-                        datos[indexDatos++] = archivo1[i++];
-                    }else{
-                        datos[indexDatos++] = archivo2[j++];
-                    }
+    void comparativaArchivos2(int archivo1[], int archivo2[], int p_tamañoGrupo){
+        int indexDatos = 0;
+        int i=0,j=0;
+        int limIndexGrupo = p_tamañoGrupo;
+        
+        while(limIndexGrupo <= archivo1.length && indexDatos < datos.length){
+            while(i<limIndexGrupo && j<limIndexGrupo){
+                if(archivo1[i] < archivo2[j]){
+                    datos[indexDatos++] = archivo1[i++];
+                }else{
+                    datos[indexDatos++] = archivo2[j++];
                 }
-                
             }
-            tamañoGrupo*=tamañoGrupo*2;
-            vueltaGrupo++;
+            
+            if(i >= limIndexGrupo && j < limIndexGrupo){
+                while(j != limIndexGrupo){
+                    datos[indexDatos++] = archivo2[j++];
+                }
+            }
+            if(j >= limIndexGrupo && i < limIndexGrupo){
+                while(i != limIndexGrupo){
+                    datos[indexDatos++] = archivo1[i++];
+                }
+            }
+            limIndexGrupo = limIndexGrupo+p_tamañoGrupo;
         }
     }
-
     
     //Puede pasar que el array de datos sea de losngitúd impar, por lo que un archivo quedará con un espacio vacío
     void distribuirDatos(int archivo1[], int archivo2[], int particion){
@@ -84,20 +72,14 @@ public class Mezcla_Directa {
                 indexDatos++;j++;
             }
         }
+        /*System.out.print("A1--> ");
+        for (int k = 0; k < archivo1.length; k++) {
+            System.out.print(archivo1[k]+" ");
+        }System.out.println("");
+        System.out.print("A2--> ");
+        for (int k = 0; k < archivo1.length; k++) {
+            System.out.print(archivo2[k]+" ");
+        }*/
+        
     }
 }
-
-
-/*
-if((i >= tamañoGrupo && j < tamañoGrupo) || (j >= tamañoGrupo && i < tamañoGrupo)){
-                    if(i>j){
-                        while(j != i){
-                            datos[indexDatos++] = archivo2[j++];
-                        }
-                    }else{
-                        while(i != j){
-                            datos[indexDatos++] = archivo1[i++];
-                        }
-                    }
-                }
-*/
