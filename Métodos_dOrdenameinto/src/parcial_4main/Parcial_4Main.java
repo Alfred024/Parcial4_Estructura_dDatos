@@ -6,48 +6,21 @@ public class Parcial_4Main {
     public static void main(String[] args) {
         //Java hace los redondeos hacia arriba???
         
-        /*int array[] = new int[20];
+        int array[] = new int[20000000];
         for (int i = 0; i <array.length ; i++) {
-            array[i] = (int) (Math.random()*10000+1);
-        }*/
-        int array[] = {24,54,2,89,80,11,10,3,55,65,5,70,45,88,114,46,77,1};
+            array[i] = (int) (Math.random()*100+1);
+        }
+        //int array[] = {8,43,17,6,40,16,18,97,11,7};
         
-        array = shellCopiado(array);
+        ordenamientos_Avanzados x = new ordenamientos_Avanzados();
+        x.quickSort2(array);
         
-        System.out.println("Array ordenado");
+        /*System.out.println("Array ordenado");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]+" ");
-        }
+        }*/
         
     }
-    //1 2 5 3 10 24 11 45 46 54 65 55 70 80 77 89 88 114
-    
-    public static int[] shellCopiado(int array[]){
-        int numero=array.length,i,j,k,salto,aux;
-        salto=numero/2;
- 
-        while(salto>0){
-            for(i=salto+1;i<=numero;i++){
-                j=i-salto;
-                while(j>0){
-                 if(array[j]>=array[j+salto]){
-                  aux = array[j];
-                  array[j] = array[j+salto];
-                  array[j+salto] = aux;
-                 }
-                 else{
-                   j=0;
-                  }
-                 j=j-salto;
-                }
-            }
-            salto=salto/2;
-        }
-
-        return array;
-    }
-
-    
     public static int[] shell(int datos[]){
         int salto = datos.length/3;
         int i,j;

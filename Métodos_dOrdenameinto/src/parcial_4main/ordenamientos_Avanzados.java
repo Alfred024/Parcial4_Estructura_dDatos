@@ -35,31 +35,76 @@ public class ordenamientos_Avanzados{
         }
     }
 
+    //En el quicksort las sublistas no necesariamente terminarán en 
+    //un número par
+    //Quicksort recursivo copiado de un libro
     public int[] quickSort(int datos[], int LI, int LS){
         int i=LI,j=LS;
         int aux;
-        int pivote = (j-i)/2;
+        int pivote = datos[(LI+LS)/2];
 
-        if(pivote != 0){
-            while(i <= j){
-                if(datos[i] < datos[pivote]){
-                    i++;
-                }
-                if(datos[j] > datos[pivote]){
-                    j++;
-                }
-                if(datos[i] <= datos[j]){
+        do{
+            while(datos[i] < pivote){
+                i++;
+            }
+            while(datos[j] > pivote){
+                j++;
+            }
+            if(i<=j){
+                aux = datos[i];
+                datos[i] = datos[j];
+                datos[j] = aux;
+                i++;j--;
+            }
+        }while(i <= j);
+        
+        if(LI<j){
+            quickSort(datos, LI, j);
+        }
+
+        if(i < LS){
+            quickSort(datos, i, LS);
+        }
+        return datos;
+    }
+
+    public int[] quickSort2(int datos[]){
+        Pila stack = new Pila();
+        nodo temp;
+        int i,j, aux;
+        int LI=0,LS=datos.length-1;
+        int pivote;
+        stack.push(LI, LS);
+        
+        do{
+            temp = stack.pop();
+            i = temp.LI;
+            j = temp.LS;
+            LI = i;
+            LS = j;
+            pivote  = datos[(LI+LS)/2];
+            
+            while(i<=j){
+                while(datos[i] < pivote){i++;}
+                while(datos[j] > pivote){j--;}
+                if(i<=j){
                     aux = datos[i];
                     datos[i] = datos[j];
-                    datos[j] = datos[i];
-                    i++;j--;
+                    datos[j] = aux;
+                    i++;
+                    j--;
                 }
             }
-            quickSort(datos,0,pivote-1);
-            quickSort(datos,pivote,datos.length-1);
-        }
-        
-        //Falta algo que haga decrecer al pivote???
+           
+            if(LS-i > 0){
+                stack.push(i, LS);
+            }
+            
+            if(j-LI > 0){
+                stack.push(LI, j);
+            }
+
+        }while(stack.tope != null);
 
         return datos;
     }
@@ -121,4 +166,38 @@ public class ordenamientos_Avanzados{
         return array;
     }
 
+}
+
+class Pila{
+    nodo tope;
+    Pila(){
+        tope=null;
+    }
+    void push(int LI, int LS){
+        nodo temp;
+        temp = new nodo(LI, LS);
+        if(tope==null)
+            tope = temp;
+        else{
+            temp.next=tope;
+            tope=temp;
+        }
+    }
+    nodo pop(){
+        nodo temp;
+        temp = tope;
+        if(tope!=null)
+            tope=tope.next;
+        return temp;
+    }
+}
+class nodo{
+    int LI;
+    int LS;
+    nodo next;
+    nodo(int LI, int LS){
+        this.LI=LI;
+        this.LS=LS;
+        this.next=null;
+    }
 }
