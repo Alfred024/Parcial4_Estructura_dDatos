@@ -2,6 +2,39 @@ package parcial_4main;
 
 public class ordenamientos_Avanzados{
     
+    public static int[] shell(int datos[]){
+        int salto = datos.length/3;
+        int i,j;
+        
+        salto = datos.length/3;
+        while(salto != 1){
+            for (i = 0; i < salto; i++) {
+                j=i;
+                while((j+salto) <= datos.length-1){
+                    if(datos[j+salto] > datos[j]){
+                        j+=salto;
+                    }else{
+                        intercambio(datos, salto, j+salto);
+                        j+=salto;
+                    }
+                }
+            }
+            salto = (salto/3)+1;
+        }
+        return datos;
+    }
+  
+    public static void intercambio(int datos[], int salto, int indexActual){
+        int i = indexActual;
+        int aux;
+        while(i-salto>= 0 && datos[i] < datos[i-salto]){
+            aux = datos[i];
+            datos[i] = datos[i-salto];
+            datos[i-salto] = aux;
+            i=-salto;
+        }
+    }
+
     public int[] quickSort(int datos[], int LI, int LS){
         int i=LI,j=LS;
         int aux;
@@ -65,11 +98,9 @@ public class ordenamientos_Avanzados{
 
     public int[] shellCopiado(int array[]){
         int numero=array.length,i,j,k,salto,aux;
-        
         salto=numero/2;
  
         while(salto>0){
-            
             for(i=salto+1;i<=numero;i++){
                 j=i-salto;
                 while(j>0){
@@ -84,41 +115,10 @@ public class ordenamientos_Avanzados{
                  j=j-salto;
                 }
             }
-            
             salto=salto/2;
         }
+
         return array;
     }
 
-    public static int[] shell(int datos[]){
-        int salto = datos.length/3;
-        int i,aux;
-
-        while(salto > 0){
-            i=0;
-
-            for (int k = 0; k < salto-1; k++) {
-                //Recorrido para adelante
-                while(i<datos.length-1 && datos.length-i >= salto){
-                    if(datos[i] > datos[i+salto]){
-                        aux = datos[i];
-                        datos[i] = datos[i+salto];
-                        datos[i+salto] = datos[i]; 
-                    }i+=salto; 
-                }
-                //Recorrido para atrás
-                /*i-=salto;
-                while(j != 0){
-                    if(datos[j] < datos[i]){
-                        aux = datos[i];
-                        datos[i] = datos[j];
-                        datos[j] = datos[i]; 
-                    }i-=salto; j-=salto;
-                }*/
-                i=k;
-            }
-            salto = (salto/3)+1;
-        }
-        return datos;
-    }
 }
