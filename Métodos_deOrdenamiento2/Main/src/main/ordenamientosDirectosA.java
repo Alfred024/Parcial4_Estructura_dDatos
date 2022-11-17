@@ -14,7 +14,7 @@ public class ordenamientosDirectosA {
         int salto = datos.length/3;
         int i,j,aux;
          
-        while(salto >= 1){
+        while(salto > 1){
             for (i = 0; i < salto; i++) {
                 j = i;
                 while(j < datos.length-salto){
@@ -29,9 +29,12 @@ public class ordenamientosDirectosA {
                     j+=salto;
                 }
             }
-            if(salto == 1){salto=-3;}
             salto = (salto/3)+1;
         }
+    }
+    
+    public void heapSort(){
+        
     }
     
     public void printData(){
