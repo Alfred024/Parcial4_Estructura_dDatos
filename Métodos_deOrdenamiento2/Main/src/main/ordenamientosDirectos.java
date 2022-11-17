@@ -42,17 +42,16 @@ public class ordenamientosDirectos {
         }
     }
     
-    public void insercion2(){
-        int i,j;
-        int aux;
-        
+    public void insercion(){
+        int i,j,aux;
+       
         for (i = 0; i < datos.length-1; i++) {
             if(datos[i] > datos[i+1]){
                 aux = datos[i+1]; 
                 j = i+1;
                 do{
                     datos[j] = datos[--j];
-                }while(j > 0 && datos[j] > aux);
+                }while(j > 0 && datos[j-1] > aux);
                 datos[j] = aux;
             }
         }

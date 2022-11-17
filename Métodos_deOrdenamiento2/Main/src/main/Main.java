@@ -12,7 +12,7 @@ public class Main {
         
         int array[] = {10,11,121,92,1899,3,42,91,78,14,1};
         ordenamientosDirectos x = new ordenamientosDirectos(array);
-        x.insercion2();
+        x.insercion();
         x.printData();
         
     }
