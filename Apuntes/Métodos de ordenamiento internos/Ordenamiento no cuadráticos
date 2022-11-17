@@ -3,6 +3,6 @@ Ordenamiento no cuadráticos
 	Shell --> Su ejecución se lleva un orden fraccionario
 
 	Uno de los primeros en romprer esta barrera 
-	El algoritmo shell comparará nu elemento, pero a partir del índice longitud del array/3, y así proseguirá con sus predecesores, hasata legar a un númeor mayor del índex
+	El algoritmo shell comparará nu elemento, pero a partir del índice longitud del array/3, y así proseguirá con sus predecesores, hasata llegar a un númeor mayor del índex
 
 	Porqué sobre 3?? Así nos aseguramos que los intervalo sde los elementos a comparar serán números primos más facilmente, y será menos probable que se repitan comparaciones de datos

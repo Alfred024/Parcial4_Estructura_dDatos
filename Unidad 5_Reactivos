@@ -1,0 +1,30 @@
+Unidad 5_Reactivos
+
+10 relacionales
+	1.- Siguen reglas específicas y comparan datos, mediante los cuales podemos conseguir un ordenamiento de estos a través de un criterio jerárquico --> Algorítmos de ordenamiento
+	2.- Procedimeinto que consiste en la repartición de datos de manera que queden accidentalmente ordenados --> Distribución
+	3.- Método de ordenación que emplea la abstracción/representación abstracta de un árbol binario en su lógica --> Heapsort
+	4.- Cantidad de veces que se ejcutará un metodo de ordenamiento hasta llegr al resultado esperado --> Pasadas
+	5.- El crecimineto de los datos significará un crecimiento en su tiempo de ejecución de manera exponencial --> Burbuja
+	6.- Para su implementación se requiere de una estructura de datos lineal de tipo cola --> RadixSort
+	7.- Algoritmo más lento para ordenar elementos --> Torneo/Burbuja
+	8.- Método de distribución surgido en los 60´s y originalmente empleando archivos --> Merge
+	9.- Basa la comparación de sus datos en el método de burbuja y es el método de ordenación interna más rápido --> 	 Quicksort
+	10.-
+	
+
+15 opcionales
+	1.- Ejemplos de algoritmos de ordenamiento interno - shell, quick sort, merge, radix
+	2.- Algoritmos de ordenamiento externo - shell, merge, torneo, mezcla natural
+	3.- Algorítmos que dependiendo del volúmen de datos, podrán alcanzar un tiempo de ejecución de crecimeinto 			logarítmico -quicksort shell cocktail radixSort
+	4.- Método de ordenación que selecciona a los "ganadores" de cada pasada -torneo
+	5.- Inventor del método de inserción por Shell --> Donald Shell
+	6.- Algoritmo más lento para ordenar elementos y que tiene número de pasadas fijas--> Torneo/Burbuja
+	7.- Métodos de ordenameito que su tiempo de ejecución crece de manera exponencial - inserción, selección, merge, 	 radix
+	8.- Métodos de distribución por mezcla - natural, directa, pituda, radical, sorteo
+	9.- Métodos de ordenamiento por selección - heap sort, torneo, burbuja, mezcla.
+	10.- Dicho algoritmo de ordenación siempre tendrá un número de padasas fijas --> Cocktail Shell BUrbuja Torneo
+	11.- Entre más eficiente el algoritmo de ordenación --> -menos líneas de código -mayor tiempo de ejecución 			 -menor uso de memoria -menor tiempo de ejecuíón
+	12.- Algortimo de ordenación que establece un intérvalo entre elementos para generar una sublista de los datos 		 originales y después ordenarlos --> -heapsort -shell -merge -cocktail
+	13.- Dos de las formas más popluares de implementar la ordenación quicksort --> -Array List -Pilas 
+		-Recursividad -Linked List

@@ -2,7 +2,8 @@ package parcial_4main;
 
 public class ordenamientos_Avanzados{
     
-    public static int[] shell(int datos[]){
+    //Este todavía no sale
+    public int[] shell(int datos[]){
         int salto = datos.length/3;
         int i,j;
         
@@ -24,7 +25,7 @@ public class ordenamientos_Avanzados{
         return datos;
     }
   
-    public static void intercambio(int datos[], int salto, int indexActual){
+    public void intercambio(int datos[], int salto, int indexActual){
         int i = indexActual;
         int aux;
         while(i-salto>= 0 && datos[i] < datos[i-salto]){

@@ -1,0 +1,11 @@
+Búsquedas 
+
+Hash = Ordenar + Buscar
+
+Hay dos tipos de ordenación: 
+	-Secuencial: Ser ordenado en la búsqueda de un elemento uno a uno hasta llegar el éxito de la tarea que se planteó,
+		Hay dos casos posibles, se encuentra el dato, o se agotan los datos a iterar, lo que se interpreta como que dicho dato no existe en nuestros elementos
+	-Binaria: 
+
+¿En un arreglo tridimensional, la búsqueda de los datos es secunecial o binaria
+
