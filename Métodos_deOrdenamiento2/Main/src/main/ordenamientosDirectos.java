@@ -11,7 +11,6 @@ public class ordenamientosDirectos {
 
     public void burbuja(){
         int i,j, pasadas, aux;
-
         for (pasadas = 0; pasadas < datos.length; pasadas++) {
             i =0;j=1;
             while(j<=datos.length-1){
@@ -26,7 +25,6 @@ public class ordenamientosDirectos {
     
     public void seleccion(){
         int pasada=0, menor, aux;
-        
         while(pasada < datos.length){
             menor = pasada;
             for (int i = pasada; i < datos.length; i++) {
@@ -37,14 +35,12 @@ public class ordenamientosDirectos {
             aux = datos[menor];
             datos[menor] = datos[pasada];
             datos[pasada] = aux;
-            
             pasada++;
         }
     }
     
     public void insercion(){
         int i,j,aux;
-       
         for (i = 0; i < datos.length-1; i++) {
             if(datos[i] > datos[i+1]){
                 aux = datos[i+1]; 
