@@ -34,7 +34,34 @@ public class ordenamientosDirectosA {
     }
     
     public void heapSort(){
+        int padreActual = (datos.length/2)-1;
+        int hijoIzq, hijoDer;
+        int muro = datos.length-1;
         
+        while(muro >= 0){
+            while(padreActual >= 0){
+                hijoIzq = (padreActual*2)+1;
+                hijoDer = (padreActual*2)+2;
+                
+                if(datos[padreActual] < datos[hijoIzq]){
+                    intercambio(hijoIzq, padreActual);
+                }
+                
+                if(datos[padreActual] < datos[hijoDer]){
+                    intercambio(hijoDer, padreActual);
+                }padreActual--;
+            }
+            intercambio(0,muro);
+            muro--;
+            padreActual = (muro/2)-1;
+        }
+    }
+    
+    public void intercambio(int index1, int index2){
+        int aux;
+        aux = datos[index1];
+        datos[index1] = datos[index2];
+        datos[index2] = aux;
     }
     
     public void printData(){
