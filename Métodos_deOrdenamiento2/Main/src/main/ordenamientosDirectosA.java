@@ -3,7 +3,7 @@ package main;
 
 public class ordenamientosDirectosA {
     int datos[];
-    Pila stack;
+    //Pila stack = new Pila();
 
     public ordenamientosDirectosA(int datos[]){
         this.datos = datos;
@@ -55,6 +55,33 @@ public class ordenamientosDirectosA {
             muro--;
             padreActual = (muro/2)-1;
         }
+    }
+    
+    public void quickSort(){
+        Pila stack = new Pila();
+        Nodo temp;
+        int i,j, LI,LS,aux, pivote;
+        stack.push(0, datos.length-1);
+        
+        do{
+            temp = stack.pop();
+            i = LI = temp.LI;
+            j = LS = temp.LS;
+            pivote  = datos[(LI+LS)/2];
+            
+            while(i<=j){
+                while(datos[i] < pivote){i++;}
+                while(datos[j] > pivote){j--;}
+                if(i<=j){
+                    intercambio(i,j);
+                    i++;j--;
+                }
+            }
+           
+            if(LS-i > 0){stack.push(i, LS);}
+            if(j-LI > 0){stack.push(LI, j);}
+
+        }while(stack.tope != null);
     }
     
     public void intercambio(int index1, int index2){
