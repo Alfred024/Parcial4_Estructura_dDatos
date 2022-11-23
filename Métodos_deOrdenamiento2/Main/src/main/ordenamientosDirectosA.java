@@ -60,7 +60,7 @@ public class ordenamientosDirectosA {
     public void quickSort(){
         Pila stack = new Pila();
         Nodo temp;
-        int i,j, LI,LS,aux, pivote;
+        int i,j, LI,LS, pivote;
         stack.push(0, datos.length-1);
         
         do{

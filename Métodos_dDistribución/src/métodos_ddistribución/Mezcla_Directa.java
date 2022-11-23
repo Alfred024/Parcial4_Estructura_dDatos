@@ -9,16 +9,13 @@ public class Mezcla_Directa {
 
     Mezcla_Directa(int datos[]){
         this.datos = datos;
-        archivo1 = new int[(datos.length/2)]; //---> Para el caso que el número de elementos a ordenar sea un núero impar
+        archivo1 = new int[(datos.length/2)];
         archivo2 = new int[(datos.length/2)];
     }
     
     //No contempla el caso de los conjuntos impares
     void merge(){
-        int vuelta = 1;
         while(particion < (datos.length)){
-            System.out.println("\n\n");
-            System.out.println("Vuelta #"+(vuelta++));
             for (int i = 0; i < datos.length; i++) {
                 System.out.print(datos[i]+" ");
             }System.out.println("");

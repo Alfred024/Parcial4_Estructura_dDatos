@@ -15,10 +15,26 @@ public class ordenamientosDirectos {
             i =0;j=1;
             while(j<=datos.length-1){
                 if(datos[i] > datos[j]){
-                    aux = datos[i];
-                    datos[i] = datos[j];
-                    datos[j] = aux;
+                    intercambio(i,j);
                 }i++;j++;
+            }
+        }
+    }
+    
+    public void cocktail(){
+        int i,j, pasadas, aux;
+        for (pasadas = 0; pasadas < datos.length/2; pasadas++) {
+            i =0;j=1;
+            while(j<=datos.length-1){
+                if(datos[i] > datos[j]){
+                    intercambio(i,j);
+                }i++;j++;
+            }
+            i--;j--;
+            while(i>=0){
+                if(datos[i] > datos[j]){
+                    intercambio(i,j);
+                }i--;j--;
             }
         }
     }
@@ -53,6 +69,13 @@ public class ordenamientosDirectos {
         }
     }
 
+    public void intercambio(int index1, int index2){
+        int aux;
+        aux = datos[index1];
+        datos[index1] = datos[index2];
+        datos[index2] = aux;
+    }
+    
     public void printData(){
         for (int i = 0; i < datos.length; i++) {
             System.out.print(datos[i]+" ");
