@@ -1,6 +1,7 @@
 
 package p325;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class P325 {
@@ -31,36 +32,26 @@ class funcionesHash{
     
     public void doblamiento(){
         String indicesClaves[][] = separarClaves(llaves);
-        String tablaHASH[] = new String[indicesClaves[1].length];
+        String areaPrimal[] = new String[indicesClaves[1].length];
+        int lengthAreaCol = (areaPrimal.length/4)+2;
+        String areaColisiones[] = new String[lengthAreaCol];
+        Arrays.fill(areaPrimal,"-1");
+        Arrays.fill(areaColisiones, "-1");
+        int index, colisiones=0, indexColisiones=0;
         
-        for (int i = 0; i < indicesClaves[1].length; i++) {
-            System.out.print("Index: "+indicesClaves[0][i]+" ");
-            System.out.print("Clave: "+indicesClaves[1][i]+"\n");
-        }
-        
-        int index, colisiones=0;
-        for (index = 0; index < tablaHASH.length; index++) {
-            tablaHASH[index] = "-1"; 
-        }
-        
-        for (index = 0; index < tablaHASH.length; index++) {
-            if(tablaHASH[Integer.parseInt(indicesClaves[0][index])].equals("-1")){
-                tablaHASH[Integer.parseInt(indicesClaves[0][index])] = indicesClaves[1][index];
+        for (index = 0; index < areaPrimal.length; index++) {
+            if(areaPrimal[Integer.parseInt(indicesClaves[0][index])].equals("-1")){
+                areaPrimal[Integer.parseInt(indicesClaves[0][index])] = indicesClaves[1][index];
             }else{
                 colisiones++;
-                int indexAux = Integer.parseInt(indicesClaves[0][index]);
-                
-                while(tablaHASH[indexAux] != "-1"){
-                    if(indexAux < tablaHASH.length-1){
-                        indexAux++;
-                    }else{
-                        indexAux = 0;
-                    }
+                while(areaColisiones[indexColisiones] != "-1"){
+                    indexColisiones++;
                 }
-                tablaHASH[indexAux] = indicesClaves[1][index];
+                areaColisiones[indexColisiones] = indicesClaves[1][index];
             }
         }
-        colisionesPorcentaje(colisiones, tablaHASH.length);
+        
+        colisionesPorcentaje(colisiones, areaPrimal.length);
         
     }
     
@@ -128,9 +119,14 @@ class funcionesHash{
 
 /*
     System.out.println("Tabla HASH");
-        for (int i = 0; i < tablaHASH.length; i++) {
-            System.out.print("["+tablaHASH[i]+"]");
+        for (int i = 0; i < areaPrimal.length; i++) {
+            System.out.print("["+areaPrimal[i]+"]");
         }System.out.println("\nColisiones: "+colisiones);
+        
+        for (int i = 0; i < indicesClaves[1].length; i++) {
+            System.out.print("Index: "+indicesClaves[0][i]+" ");
+            System.out.print("Clave: "+indicesClaves[1][i]+"\n");
+        }
 */
 
 //funcionesHash x = new funcionesHash("PEDRO:ANA:ANGEL:LUIS:MIGUEL:MARIA:PATRICIA");
